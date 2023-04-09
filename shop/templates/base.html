@@ -1,0 +1,31 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navblock">
+        <ul class="headlist">
+          <li class="urlcell">
+            <a class="urlPage" href="{% url 'main' %}">Головна</a>
+          </li>
+          <li class="urlcell">
+            <a class="urlPage" href="{% url 'catalog' %}">Каталог</a>
+          </li>
+          <li class="urlcell">
+            <a class="urlPage" href="{% url 'aboutus' %}">Про нас</a>
+          </li>
+          <li class="urlcell">
+            <a class="urlPage" href="{% url 'feedback' %}">Зворотній зв'язок</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    {% block content %} {% endblock %}
+  </body>
+</html>
